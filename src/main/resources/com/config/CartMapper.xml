@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CartMapper">
+	<insert id="addCart" parameterType="CartDTO">
+		insert into cart (num, userid, gCode, gName, gPrice, gSize, gColor, gAmount, gImage)
+		values (cart_seq.nextval, #{userid}, #{gCode}, #{gName}, #{gPrice}, #{gSize}, #{gColor}, #{gAmount}, #{gImage})
+	</insert>
+	<!-- [참고] 다중 insert sql
+	https://plitche.github.io/database/oracle/2021-03-18-oracleinsert/
+	https://apt-get-install.github.io/orcale/Oracle-performance-01/ 
+	https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=s_bunee&logNo=221494472297
+	-->
+	<!-- INSERT ALL
+	  INTO EMP VALUES ('김철수', 25, 'M')
+	  INTO EMP VALUES ('이영희', 30, 'F')
+	  INTO EMP VALUES ('박진수', 22, 'M')
+	SELECT * FROM DUAL; -->
+	<!-- 
+	INSERT INTO [테이블] ([COLUMN1], [COLUMN2], ...) 
+		SELECT ([VALUE1], [VALUE2], ...) FROM DUAL UNION ALL 
+		SELECT ([VALUE1], [VALUE2], ...) FROM DUAL UNION ALL
+		...
+		SELECT ([VALUE1], [VALUE2], ...) FROM DUAL
+	); -->
+	<!-- <insert id="addCarts" parameterType="arraylist">
+		CREATE FUNCTION get_cart_seq RETURN NUMBER IS
+		BEGIN RETURN cart_seq.nextval
+		END
+	
+		insert all
+		<foreach collection="list" index="index" item="dto">
+		into cart (num, userid, gCode, gName, gPrice, gSize, gColor, gAmount, gImage) 
+		values (cart_seq.nextval, #{dto.userid}, #{dto.gCode}, #{dto.gName}, #{dto.gPrice}, #{dto.gSize}, #{dto.gColor}, #{dto.gAmount}, #{dto.gImage})
+		</foreach>
+		select * from dual
+	</insert> -->
+	
+	
+	
+	<select id="cartList" parameterType="string" resultType="CartDTO">
+		select * from cart 
+		where userid=#{userid}
+	</select>
+	<update id="cartUpdate" parameterType="hashmap">
+		update cart
+		set gAmount= #{gAmount}
+		where num=#{num}
+	</update>
+	<delete id="cartDelete" parameterType="int">
+		delete from cart
+		where num=#{num}
+	</delete>
+	<delete id="cartDeleteChk" parameterType="arraylist">
+		delete from cart
+		where num in 
+		<foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	<select id="cartByNum" parameterType="int" resultType="CartDTO">
+		select * from cart where num=#{num}
+	</select>
+	<select id="cartListByNum" parameterType="list" resultType="CartDTO">
+		select * from cart
+		where num in 
+		<foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+		#{item}
+		</foreach>
+	</select>
+	<select id="sameChk" parameterType="CartDTO" resultType="CartDTO">
+		select * from cart
+		where userid=#{userid} and gCode=#{gCode} and gSize=#{gSize} and gColor=#{gColor}
+	</select>
+</mapper>

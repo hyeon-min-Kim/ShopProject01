@@ -1,0 +1,12 @@
+(방법1)[참고]https://imyena.tistory.com/54
+
+Context Path/Root 변경함. http://localhost:8082/가 메인페이지 되도록. 기존은 http://localhost:8082/company/
+
+1. Pakage Explorer의 Servers프로젝트 > server.xml 파일 오픈
+2. <Context docBase="ShopProject01" path="/company" reloadable="true" source="org.eclipse.jst.jee.server:ShopProject01"/>을
+	<Context docBase="ShopProject01" path="/" reloadable="true" source="org.eclipse.jst.jee.server:ShopProject01"/>로 변경
+	(path값 변경)
+	
+	
+(방법2)[참고]https://codedragon.tistory.com/6226
+Artifact명을 '/company'에서 '/'로 변경

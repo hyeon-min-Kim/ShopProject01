@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+*{margin:0; padding:0; box-sizing: border-box;}
+a {text-decoration:none; color:#555;}
+hr {margin:10px 0}
+ul, ol, li {list-style: none;}
+table {border-spacing:0}
+table th, table td{height:40px; min-height:40px; font-size:14px; line-height:20px; font-weight:normal; border:0}
+table a {display:inline-block; margin-left:2px; padding:5px 10px; border:1px solid #000; color:#000; font-size:11px; text-align:center; line-height:20px; background:#fff;}
+table a:hover{color:#fff; background:#000;}
+input, select {height:32px; margin:2px 0; padding:5px 10px; background:#fff; color:#000; font-size:12px; line-height:20px; border:1px solid #ddd; box-sizing:border-box}
+label {position:relative; top:-10px;}
+
+.gry {font-size:12px; color:#888;}
+.red {font-size:12px; color:red;}
+.blu {font-size:12px; color:blue;}
+
+.taL {text-align:left}
+.taC {text-align:center}
+.taR {text-align:right}
+
+.mt0{margin-top:0px !important;}
+.mt5{margin-top:5px !important;}
+.mt10{margin-top:10px !important;}
+.mt20{margin-top:20px !important;}
+.mt30{margin-top:30px !important;}
+.mt40{margin-top:40px !important;}
+.mt50{margin-top:50px !important;}
+.mt60{margin-top:60px !important;}
+.mt80{margin-top:80px !important;}
+
+/* header */
+header {position:relative}
+/*
+header:before {content:""; display:block; position:absolute; top:0; left:0px; width:1px; height:100%; background:#c8c8c8}
+header:after {content:""; display:block; position:absolute; top:0; right:0px; width:1px; height:100%; background:#c8c8c8}
+*/
+
+header {width:980px; margin:0 auto 20px; padding:0 20px 10px; border-bottom:1px solid #000}
+header .logo {margin-bottom:30px;}
+header .logo a {font-size:30px; font-weight:bold; color:#000}
+
+/* btns */
+.btns a {display:inline-block; margin-left:2px; padding:6px 8px; border:1px solid #000; color:#000; font-size:12px; text-align:center; background:#fff;}
+.btns a:hover{color:#fff; background:#000;}
+a.btn {display:inline-block; margin-left:2px; padding:6px 8px; border:1px solid #000; color:#000; font-size:12px; text-align:center; background:#fff;}
+a.btn:hover{color:#fff; background:#000;}
+
+/* table */
+.type01 {width:100%;}
+.type01 th {width:100px; text-align:left}
+.type01.bor tr th {border-top:1px solid #ddd}
+.type01.bor tr td {border-top:1px solid #ddd}
+.type01.bor tr th.fir {border-top:1px solid #000}
+.type01.bor tr td.fir {border-top:1px solid #000}
+
+/* content */
+.content {position:relative}
+/*
+.content:before {content:""; display:block; position:absolute; top:0; left:0px; width:1px; height:100%; background:#c8c8c8}
+.content:after {content:""; display:block; position:absolute; top:0; right:0px; width:1px; height:100%; background:#c8c8c8}
+*/
+
+.content {width:980px; margin:0 auto 20px; padding:0 20px}
+
+/* loginDiv */
+.loginDiv {width:300px; margin:0 auto}
+.loginDiv dl dt {margin-top:10px; font-size:12px;}
+.loginDiv dl dt:first-child {margin-top:0}
+.loginDiv dl dd {font-size:12px;}
+.loginDiv input {width:100%; height:40px}
+.loginDiv a {width:100%; height:40px; margin:10px 0 0; padding:0; line-height:40px; background:#000; color:#fff}
+
+/* goodList */
+.productDiv ul {display:flex; flex-wrap:wrap;}
+.productDiv ul li {width:20%; padding:0 20px 40px 0}
+.productDiv ul li p {line-height:1.5; padding-top:10px}
+.productDiv ul li .gname {font-size:14px}
+.productDiv ul li .gprice{font-size:12px; font-weight:bold}
+.productDiv ul li .gcontent{font-size:12px; color:#888}
+.productDiv ul li .gimage {width: 100%;height: 160px;overflow: hidden;display: flex;justify-content: center;}
+
+/* goodRetrive */
+.goodRetrive {display:flex; flex-wrap:nowrap; padding:0 20px}
+.goodRetrive .imageDiv img {width:200px;}
+.goodRetrive .infoDiv table tr th {width:100px; text-align:left}
+.goodRetrive .infoDiv .contentBox {margin-top:20px;}
+.goodRetrive .infoDiv .contentBox p {padding:5px; border-bottom:1px solid #000}
+.goodRetrive .infoDiv .contentBox div {padding:5px; font-size:12px;}
+
+/* cartListTable */
+.cartListTable {width:100%}
+.cartListTable th {padding:0 10px; border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8}
+.cartListTable td {padding:8px 10px}
+.cartListTable input[type="number"] {width:50px}
+.cartListTable .gInfo {display:flex; flex-wrap:nowrap}
+.cartListTable .gInfo .image img {width:60px}
+.cartListTable .gInfo .detail ul {display:flex; flex-wrap:wrap; align-content:center; height:100%; padding-left:20px}
+.cartListTable .gInfo .detail ul li {width:100%}
+
+/* orderedList */
+.orderedList .inquireDiv {margin-top:40px; padding-bottom:20px; border-bottom:1px solid #000}
+.orderedList .inquireDiv:first-child {margin-top:0;}
+.orderedList .inquireDiv .orderday {margin-bottom:12px; padding:20px 0 20px; font-weight:bold; font-size:18px; border-bottom:3px solid #000}
+.orderedList .inquireDiv .title {margin:20px 0 10px; font-weight:bold;}
+.orderedList .inquireDiv .orderInfo {display:flex; flex-wrap:nowrap; justify-content:space-between;}
+.orderedList .inquireDiv .orderInfo .info p {margin-top:6px; font-size:14px;}
+.orderedList .inquireDiv .orderInfo .info p:first-child {margin-top:0;}
+.orderedList .inquireDiv .orderInfo .info .name {font-weight:bold; font-size:16px}
+.orderedList .inquireDiv .orderInfo .image img {width:100px}
+.orderedList .inquireDiv .addrInfo dl {display:flex; flex-wrap:nowrap}
+.orderedList .inquireDiv .addrInfo dt {position:relative; min-width:100px; margin-right:20px; white-space:nowrap}
+.orderedList .inquireDiv .addrInfo dt:after {content:""; display:block; position:absolute; top:0; right:0; width:1px; height:16px; background:#ddd}
+
+/* mypage */
+.mypage .title {margin:40px 0 20px; font-weight:bold;}
+.mypage .title:nth-of-type(1) {margin:0 0 20px}
+
+/* orderComplete */
+.orderComplete .cartListTable th {border-top:1px solid #000}
+
